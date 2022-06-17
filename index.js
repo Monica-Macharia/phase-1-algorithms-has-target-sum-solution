@@ -1,17 +1,28 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const storageUnit = new Set(); 
+  for (const item of array) {
+    const targetNumber = target - item;
+
+        if (storageUnit.has(targetNumber)) return true;
+
+        storageUnit.add(item);
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  this is a linear time and space complexity
 */
 
 /* 
-  Add your pseudocode here
+  create a set to accomadate items from the for loop
+  if the number stored in the loop is equal to the targetnumber return true
 */
 
 /*
-  Add written explanation of your solution here
+  targetNumber is target - item in array.
+  for comparison purposes, store it in the new set.
+  return true if targetNumber is in the set, and add a new item if not.
 */
 
 // You can run `node index.js` to view these console logs
